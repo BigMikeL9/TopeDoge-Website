@@ -1,0 +1,279 @@
+html {
+  scroll-behavior: smooth; /* enables smooth scrolling across anchors on the same page */
+}
+
+body {
+  text-align: center;
+}
+
+h1, h2, h3, h4, h5, h6 {  /* this adds the same property to each of these elements */
+  font-family: 'Montserrat', sans-serif;
+}
+
+.container-fluid {
+  padding: 7% 15%; /* - this is to center the sections
+                      - its good to use the bootstrap "container-fluid" class for all sections, and then adjusting/overriding its padding values specifically for each section by targeting it there. */
+  overflow: hidden;
+}
+
+/* Refactoring Tips*/
+
+ /*  - Try to group the element selectors together on the top
+     - dont add properties regarding font size, line height etc, in elementa selectors,
+       instead add a specific tag for that element with these properties*/
+
+
+/* Navigation Bar */
+
+.navbar{
+  padding: 0 0 10%;
+}
+
+.navbar-brand {
+  font-size: 2rem;
+  font-weight: 700;
+}
+
+.nav-item{
+  padding: 0 18px;
+}
+
+.navbar-dark .navbar-nav .nav-link {
+  font-family: 'Ubuntu', sans-serif;
+  color: #f8f9fa;
+  font-weight: 100;
+  font-size: 1.1rem;
+}
+
+
+/* Title Section */
+
+#title {
+  background-color: #0085ba;
+  text-align: left;
+}
+
+#title .container-fluid { /* this will overide the .container-fluid properties for this specific section */
+  padding: 3% 15% 11%;
+}
+
+.big-heading {
+  font-weight: 900;
+  font-size: 3.5rem;
+  line-height: 1.5;
+  color: white;
+}
+
+
+/* Buttons */
+
+/* This line is getting overridden by .btn class, but im just leaving it for reference */
+.download-button { /* better to add your own classes and add css to them, rather than editing the bootsrap classes; incase you want to use the same classes later but dont want the same css properties you add to them */
+  margin: 3rem 1.5rem 0 0;
+}
+
+.fab {
+  margin-right: 4px;
+}
+
+/* Title Image */
+
+.tinder-dog-img {
+  position: absolute; /* Features Section is on TOP of the "tinder-dog-img" because it is below it in the HTML order, and elements below are placed on top of elements above (so no need to change the z-index) */
+  left: 40%;
+  /* transform: rotate(25deg); */
+  width: 60%;
+}
+
+
+/* Features Section */
+
+
+#features h3 { /* this adds the properties inside, to the h3 element placed/childed to the #features sections, and nowhere else.*/
+  font-size: 1.5rem;
+  font-weight: 900;
+}
+
+#features p {
+  padding: 5% 8%;
+  margin: 0 auto;
+  color: #8f8f8f;
+}
+
+#features .icons {
+  color: #30e3ca;
+  padding-bottom: 1.5rem;
+}
+
+#features .icons:hover {  /* ":hover" is called a SUTO-CLASS */
+  color: #11999e;
+}
+
+
+/* Testimonials Section */
+
+#testimonials {
+  background-color: #0085ba;
+  color: #fff;
+}
+
+#testimonials h2 {
+  font-weight: 900;
+  font-size: 3rem;
+  line-height: 1.5;
+}
+
+.testimonials-image {
+  width: 10%;
+  border-radius: 100%;
+  margin: 20px; /* ******** when moving images around use MARGIN not padding ******** */
+}
+
+/* .carousel-item {
+  padding: 7% 15%; /*  - added the .container-fluid class, to the carousel instead.
+                       - this is so that we dont have the carousel left and right buttons pushed in too much from the #testimonials
+                        section padding (which we removed from there and added it here) */
+}
+
+
+/* Press Section */
+
+#press {
+  background-color: #0085ba;
+}
+
+#press .container-fluid {
+  background-color: #0085ba;
+  padding: 0 0 3%;
+}
+
+#press img {
+  width: 15%;
+  margin: 20px 20px 50px; /* when moving images around use MARGIN not paddin */
+}
+
+
+/* Pricing Section */
+
+#pricing h2 {
+  font-weight: 900;
+  font-size: 2rem;
+}
+
+#pricing h3 {
+  margin: 0;
+}
+
+#pricing p{
+  margin: 0;
+  line-height: 2;
+}
+
+.pricing-column {
+  padding: 5% 2% 3%;
+}
+
+.card-button {
+  margin: 3rem auto 0;
+}
+
+
+/* Call to Action */
+
+#cta {
+  background-color: #0085ba;
+}
+
+#cta .container-fluid {
+  padding: 7% 20%;
+}
+
+#cta h3 {
+  font-size: 3.5rem;
+  font-weight: 900;
+  line-height: 1.5;
+  color: white;
+}
+
+
+/* Footer Section */
+
+#footer {
+  color: #8f8f8f;
+}
+
+#footer .container-fluid {
+  padding: 5% 20%;
+}
+
+.social-icon {
+  padding: 20px 10px;
+}
+
+#footer a {
+  color: #8f8f8f;
+}
+
+#footer a:hover {
+  color: #0085ba;
+}
+
+#footer p {
+  font-size: 0.9rem;
+  padding-top: 1.5rem;
+}
+
+
+/* Media Queries (this changes the css characteristics of elements under specific conditions, like screen size).
+This is used for fine tuning and exact design at different screen sizes, where as bootstrap grids is used broad responsiveness */
+@media (max-width: 1028px) {
+
+.big-heading {
+  font-size: 3rem;
+}
+
+#testimonials h2 {
+  font-size: 2.5rem;
+}
+
+#cta h3 {
+    font-size: 2.5rem;
+}
+
+  #title {
+    text-align: center;
+  }
+
+  .tinder-dog-img {
+    position: static;
+    width: 50%;
+    margin: 3rem auto 0;
+  }
+
+  .download-button {
+    margin: 2rem 0.5rem 0;
+  }
+
+}
+
+
+@media screen and (max-width: 420px) {
+
+  .big-heading {
+    font-size: 2rem;
+  }
+
+  #testimonials h2 {
+    font-size: 1.3rem;
+  }
+
+  #cta h3 {
+      font-size: 1.3rem;
+  }
+
+  #press img {
+      width: 20%;
+      margin: 10px 10px 20px;
+  }
+
+}
